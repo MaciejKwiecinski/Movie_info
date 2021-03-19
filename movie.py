@@ -29,10 +29,7 @@ class Movie:
 
     def set_imdbRating(self):
         try:
-            if self.jsonObj['imdbRating'].isdigit():
-                return float(self.jsonObj['imdbRating'])
-            else:
-                return False
+            return float(self.jsonObj['imdbRating'])
         except IndexError:
             return False
 

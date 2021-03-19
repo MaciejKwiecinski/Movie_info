@@ -10,7 +10,7 @@ def is_existing(title, key="e9b8446e"):
     if data["Response"] == "True":
         return Movie(data)
     else:
-        print("Nie ma filmu o takim tytule.")
+        print("There is no movie with title like " + title)
         return -1
 
 def add_to_list(title, arr):
@@ -28,8 +28,11 @@ def next_move(move, m1):
     elif move == "average rating":
         m1.average_rating()
     elif move == "to json":
-        name = input("Nazwij plik: ")
+        name = input("Name new file: ")
         m1.generate_json(name)
     elif move == "to csv":
-        name = input("Nazwij plik: ")
+        name = input("Name new file: ")
         m1.generate_csv(name)
+    # elif move == "to db":
+    #     name = input("Name new file: ")
+    #     m1.generate_db(name)

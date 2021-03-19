@@ -1,5 +1,8 @@
 import json
 import csv
+# import sqlite3
+# from sql import *
+
 
 class MovieBase:
     def __init__(self, obj_array):
@@ -29,9 +32,9 @@ class MovieBase:
         try:
             for movie in self.arr:
                 if movie.metascore:
-                    mcr+=movie.metascore
+                    mcr += movie.metascore
                     mc += 1
-            print("1) Metacritic: " + str(mcr/mc) + "/100")
+            print("1) Metacritic: " + str(mcr / mc) + "/100")
         except ZeroDivisionError:
             print("Brak ocen Metacritic")
 
@@ -41,9 +44,9 @@ class MovieBase:
         try:
             for movie in self.arr:
                 if movie.rottentomato:
-                    rtr+=movie.rottentomato
+                    rtr += movie.rottentomato
                     rt += 1
-            print("3) Rotten Tomato: " + str(rtr/rt) + "%")
+            print("3) Rotten Tomato: " + str(rtr / rt) + "%")
         except ZeroDivisionError:
             print("Brak ocen Rotten Tomato")
 
@@ -53,9 +56,9 @@ class MovieBase:
         try:
             for movie in self.arr:
                 if movie.imdbRating:
-                    imdbr+=movie.imdbRating
+                    imdbr += movie.imdbRating
                     imdb += 1
-            print("2) IMDB: " + str(imdbr/imdb) + "/10")
+            print("2) IMDB: " + str(imdbr / imdb) + "/10")
         except ZeroDivisionError:
             print("Brak ocen IMDB")
 
@@ -81,3 +84,12 @@ class MovieBase:
             for movie in self.arr:
                 wr.writerow(movie.create_row())
         f.close()
+
+    # def generate_db(self, name):
+    #     conn = sqlite3.connect(name + ".db")
+    #     cursor = conn.cursor()
+    #     cursor.execute(create_table)
+    #     for movie in self.arr:
+    #         insert_into.format(movie.create_row())
+    #     conn.commit()
+    #     conn.close()

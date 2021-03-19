@@ -3,10 +3,9 @@ from MovieBase import MovieBase
 import os
 
 arr = []
-key = input("Podaj swój API key do OMDB: ")
-inp = input("Podawaj tytuły filmów: ")
+inp = input("Enter the title of the video : ")
 
-while inp != "end":
+while inp.lower() != "finish entering the titles":
     if type(inp) == list:
         for title in inp:
             add_to_list(inp, arr)
@@ -17,14 +16,14 @@ while inp != "end":
 if arr != []:
     movies = MovieBase(arr)
 else:
-    print("Brak listy filmów")
+    print("No movie list here")
     exit(-2)
 
-move = input("Co robimy? ")
+move = input("What next? ")
 
 while move.lower() != "end":
     next_move(move.lower(), movies)
-    move = input("Co robimy? ")
+    move = input("What next? ")
     os.system('cls||clear')
 
 exit(0)
