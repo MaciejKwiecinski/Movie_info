@@ -42,6 +42,15 @@ to json
 to csv
 ```
 will ask for a file name and create json and csv files respectively. 
+```terminal
+clear
+```
+will clear terminal.
+
+To finish app working enter:
+```terminal
+end
+```
 
 
 ## License
